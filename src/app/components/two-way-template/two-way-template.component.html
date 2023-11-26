@@ -1,0 +1,24 @@
+<p>two-way-template works!</p>
+<input type="text" #internship_course placeholder="Course Name">
+<input type="text" #internship_Stipend placeholder="Course Fee">
+
+<input type="text" #intern placeholder="Location">
+<button (click)="getLoc(intern.value)">Location</button>
+
+<button (click)="getInter(internship_course.value)">Internship Course</button>
+<button (click)="getInterF(internship_Stipend)">Internship fee</button>
+
+<p>INTERNSHIP  Course IS: {{val1}}</p>
+<p>INTERNSHIP  FEES IS: {{val2}}</p>
+
+<p>Location is: {{val3}}</p>
+
+<input type="text" [(ngModel)]="myObject">
+<span>My name is:{{myObject}}</span>
+<button mat-raised-button color="primary">Primary</button>
+<mat-chip-listbox aria-label="Fish selection">
+    <mat-chip-option>One fish</mat-chip-option>
+    <mat-chip-option>Two fish</mat-chip-option>
+    <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+    <mat-chip-option color="warn">Warn fish</mat-chip-option>
+  </mat-chip-listbox>

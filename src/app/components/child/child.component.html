@@ -1,0 +1,27 @@
+<p>child works!</p>
+{{pData}}
+{{myData | json}}
+<h3>{{msgFromChild}}</h3>
+<h3>{{msgFromChild2}}</h3>
+<h2>{{myChild3}}</h2>
+<h5>{{msgCtoP}}</h5>
+
+<button (click)="sendCh1()">Send ch1</button>
+<button (click) ="sendMsgtoParent()"> Send Message</button> -->
+
+<button (click)="getC()">Child</button>
+
+<button mat-raised-button  (click)="sendMsg2()">Send Data</button>
+
+<p #para>This is View Child</p>
+<p #para>This is View Child 2</p>
+<h1 #heading>This is View Children 1</h1>
+<h1 #heading>This is View Children 2</h1>
+<h1 #heading>This is View Children 3</h1>
+<button (click)="onClick()">Submit</button>
+
+<p class="hem">Hey There, Good One!</p>
+
+<app-pipe></app-pipe>
+
+<ng-content></ng-content>

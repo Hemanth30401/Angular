@@ -1,0 +1,8 @@
+.t2{
+    display:flex;
+    float:right;
+}
+label::after{
+    content: " *";
+    color:red;
+}

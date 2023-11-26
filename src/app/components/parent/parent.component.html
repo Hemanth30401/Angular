@@ -1,0 +1,26 @@
+<p>parent works!</p>
+{{ngAfterContentChecked()}}
+{{child2D | json}}
+{{myCh2}}
+<h3>{{myC}}</h3>
+<hr>
+<app-child (mp)="getC1($event)" (ch2)="getCh2($event)" [myChild3]="myParentData" (msgToParent2)="getData2($event)"  (msgtoParent)="getData($event)" [myData]="myObj" [pData]="displayText" ></app-child>
+<app-child ></app-child>
+
+<h3>{{msgFromChild}}</h3>
+<h3>{{msgFromChild2}}</h3>
+<h3>{{msgCtoP}}</h3>
+<hr>
+
+<app-child>
+    <h1 #data1>Hello There!</h1>
+</app-child>
+
+
+
+
+
+
+
+
+

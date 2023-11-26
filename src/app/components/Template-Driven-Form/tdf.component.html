@@ -1,0 +1,64 @@
+<app-login></app-login>
+<h2 [class.select]="'true'">CodeHackerr</h2><br>
+<h4 [class.select]="'true'">Registration Form</h4><br>
+<p *ngIf="msg==''; else eblock"></p>
+<form #myForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
+<div class="container">
+    <div class="row">
+        
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    First Name: <input type="text" [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="userModel.firstName" name="firstName" #name="ngModel" class="form-control"
+                        placeholder="firstName" required>
+                    <small [class.d-none]="name.valid || name.untouched" class="text-danger">Name is Required</small>
+                                </div>
+                <div class="input-group mb-3">
+                    Last Name:<input type="text" [(ngModel)]="userModel.lastName" name="lastName" class="form-control" #lastName="ngModel" [class.is-invalid]="lastName.invalid && lastName.touched" 
+                        placeholder="LastName" required>
+                    <small [class.d-none]="lastName.valid || lastName.untouched" class="text-danger">Last name is Required</small>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" [(ngModel)]="userModel.emailId" name="emailId"
+                        placeholder="Recipient's username" aria-label="Recipient's username"
+                        aria-describedby="basic-addon2">
+                    <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                </div>
+            </div>
+            <div class="col-6">
+                <span class="form-check mb-3">
+                    <input class="form-check-input" type="radio" value="male" [(ngModel)]="userModel.gender" name="Gender">
+                    <label>
+                        Male
+                    </label>
+                </span>
+                <span class="form-check mb-3">
+                    <input class="form-check-input" type="radio" value="female" [(ngModel)]="userModel.gender" name="Gender">
+                    <label>
+                        Female
+                    </label>
+                </span>
+                
+                <div class="input-group mb-3">
+                    <select class="form-select form-select-lg mb-3" [(ngModel)]="userModel.branch" aria-label="Large select example">
+                        <option>Choose your Branch</option>
+                        <option *ngFor="let course of branches">{{course}}</option>
+
+                    </select>
+                </div>
+                
+            </div>
+            <div class="input-group mb-3">
+                <button class="btn btn-primary" [(ngModel)]="userModel.submit" type="submit" routerLink="/courses">Submit</button>
+            </div>
+        
+    </div>
+</div>
+</form>
+
+<span class="myData" >Form details is : {{myForm.value | json}}<hr>
+<span class="my1" >NgModel is : {{userModel | json}}
+<ng-template #eblock>
+    {{msg | json}}
+</ng-template>
+
+<div appAttribute>Hello everyone</div>

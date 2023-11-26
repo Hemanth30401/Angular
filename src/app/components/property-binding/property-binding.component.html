@@ -1,0 +1,8 @@
+<p>property-binding works!</p>
+<input type="text" value="WC"><br>
+<input type="text" value={{name}} id ={{name1}}><br>
+ <input type="text" [value]="name" [id]="name1" >
+
+<hr>
+<input type="text" [value]="name" [id]="name1" disabled={{isDisabled}}><!--String interpolation doesn't work-->
+<input type="text" [value]="name" [disabled]="isDisabled"><!--Property binding will work-->

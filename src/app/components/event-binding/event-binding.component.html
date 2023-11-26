@@ -1,0 +1,15 @@
+<p>event-binding works!</p>
+<button (click)="onClick()" style="background: lightblue;">Click Me</button>
+<h3>Enter Your name:</h3>
+<button (dblclick)="onDoubleClick()" style>Double Click Me</button>
+<button (mouseover)="onMouse()">Mouse Over</button>
+<button (mouseout)="onOut()">Mouse Out</button>
+<button (mousemove)="mouseMove()">Mouse Move</button>
+
+<hr>
+<input type="text" value="Key downed" (keydown)="keyDown()">
+<input type="text" value="Key Upped" (keyup)="keyUp()">
+<input type="text" value="key press" (keypress)="keyPress()">
+<hr>
+<input type="text" value="focus" (blur)="onfocus()">
+<input type="text" value="hey" (input)="onInput()">

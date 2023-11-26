@@ -1,0 +1,58 @@
+<app-login></app-login>
+<h3>Courses</h3>
+
+<!-- <p *ngFor="let course of courses;">
+    {{course.name}}
+    </p>
+    <table>
+    <th>ID</th>
+    <th > FirstName </th>
+    <th> lastName </th>
+          <tr *ngFor="let employees of employee"> 
+            <td>{{employees.id}}</td>
+            <td>{{employees.firstName}}</td>
+            <td>{{employees.lastName}}</td>
+          </tr>
+    </table>
+
+    <p>{{data?.id}}</p>
+    <p>{{data?.title}}</p>
+    <p>{{data?.price}}</p>
+    <p>{{errorMessage}}</p>
+
+
+    <p *ngIf="errorMessage==null; then err2 else err1"></p>
+      <ng-template #err2>
+        <p>NULL </p>
+      </ng-template>
+      <ng-template #err1>
+        <p>{{errorMessage}}</p>
+      </ng-template>
+
+      <input type="text" #data (keydown)="search(data.value)">
+      <div *ngIf="resultData.length>0">
+      <ul>
+        <li *ngFor="let res of resultData">
+          <p *ngFor="let y of res.altSpellings | keyvalue">
+           <span *ngIf="y.key == 0">
+            {{y.value}}
+           </span>
+          </p>
+        </li>
+      </ul>
+    </div>
+
+
+ -->
+
+ <h3 [align]="'center'">Courses</h3>
+ <div [align]="'center'">
+    <ul *ngIf="courses.length>0">
+      <a href="javascript:void(0)" *ngFor="let course of courses" [class.selected]="selected(course)" (click)="onSelectCourse(course)">
+        {{course.id+"."}}{{course.name}}
+        <br>
+      </a>
+    </ul>
+ </div>
+
+ 

@@ -1,0 +1,42 @@
+<p>directives works!</p>
+<div *ngIf="myCheck; then isBlock else myBlock" ></div>
+<ng-template #myBlock>
+    <p>Coder 1</p>
+    <p>Technical Coder</p>
+    <p>HR</p>
+</ng-template>
+<ng-template #isBlock>
+    <p>Coding Himalayan</p>
+    <p>Yamaha MT15</p>
+    <p>Apache Karishma</p>
+</ng-template>
+
+<!--Swtich Directive-->
+<div [ngSwitch]="matchingValue">
+    <div *ngSwitchCase="'One'">Hackerrank1</div>
+    <div *ngSwitchCase="'Two'">Hackerrank2</div>
+    <div *ngSwitchCase="'Three'">Hackerrank3</div>
+    <div *ngSwitchDefault>Default value</div>
+</div>
+
+<h3 *ngFor="let x of names;index as i">{{x}} -- {{i}}</h3>
+<h3 *ngFor="let x of names;even as e">{{x}} -- Even Postion: {{e}}</h3>
+<h3 *ngFor="let x of names;odd as o">{{x}} == Odd Postions ade :  {{o}}</h3>
+
+<h3 >Players : {{names}}</h3>
+
+<h4>{{emp | json}}</h4>
+<h3 *ngFor="let x of emp | keyvalue">{{x.key}} -- {{x.value | json}}</h3>
+<h3 *ngFor="let x of emp">
+    <h3 *ngFor ="let y of x | keyvalue">
+        {{y.key}} -- {{y.value}}
+    </h3>
+</h3>
+
+<h3 [ngSwitch]="team">
+    <u *ngSwitchCase="'india'">India</u>
+    <u *ngSwitchCase="'aus'">Aus</u>
+    <u *ngSwitchCase="'sa'">Sa</u>
+    <u *ngSwitchCase="'pak'">Pak</u>
+    <u *ngSwitchDefault>Default option</u>
+</h3>

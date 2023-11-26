@@ -1,0 +1,26 @@
+<app-login></app-login>
+<input type="text" #data (keydown)="search(data.value)">
+      <div *ngIf="resultData.length>0">
+      <ul>
+        <li *ngFor="let res of resultData">
+          <p *ngFor="let y of res.altSpellings | keyvalue">
+           <span *ngIf="y.key == 0">
+            {{y.value}}
+           </span>
+          </p>
+        </li>
+      </ul>
+    </div>
+<div>
+  <h2>Search country name</h2>
+  <!-- <input type="text" #promise (keyup)="getCountry(promise.value)"> -->
+  <input type="text" [formControl]="country">
+</div>
+
+<div *ngIf="resData.length>0">
+<span *ngFor="let r of resData">
+  <ul>
+    <li>{{r.name.common}}</li>
+  </ul>
+</span>
+</div>

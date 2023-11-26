@@ -1,0 +1,133 @@
+<h2 style="color:#663399;display:flex;justify-content: center;">Welcome to CodeHacker Website</h2>
+<hr>
+<h3 style="color:teal;display:flex;justify-content: center;">Registration Form</h3>
+<hr>
+<div class="container-lg">
+    <form [formGroup]="registerForm">
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label>First Name: </label>
+                <input type="text" class="form-control" [class.is-invalid]="registerForm.get('firstName').invalid && registerForm.get('firstName').touched" formControlName="firstName" name="firstName" placeholder="First Name">
+                <small class="text-danger" *ngIf="registerForm.get('firstName').errors?.required">First Name is Required</small>
+                
+            </div>
+
+            <div class="mb-3">
+                Middle Name: 
+                <input type="text" class="form-control" name="middleName" placeholder="Middle Name">
+            </div>
+
+            <div class="mb-3">
+                <label>Last Name: </label>
+                <input type="text" class="form-control" [class.is-invalid]="registerForm.get('lastName').invalid && registerForm.get('lastName').touched" formControlName="lastName" name="lastName" placeholder="Last Name">
+                <small class="text-danger" *ngIf="registerForm.get('lastName').errors?.required">Last Name is Required</small>
+            </div>
+            
+            <div class="mb-4">
+                <label>Gender: </label>&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="gender">&nbsp;
+                Male&nbsp;&nbsp;
+                <input type="radio" name="gender">&nbsp;
+                Female
+            </div>
+
+            <div class="mb-4">
+                <label>Date Of Birth:&nbsp; </label>
+                &nbsp;<input type="date" name="Dob" >
+            </div>
+            
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label>Email: </label>
+                <input type="email" class="form-control" [class.is-invalid]="registerForm.get('email').invalid && registerForm.get('email').touched" formControlName="email" name="email" placeholder="Eg: abc@gmail.com">
+                <small class="text-danger" *ngIf="registerForm.get('email').errors?.required">Email is Required</small>
+            </div>
+            <div class="mb-3">
+            <label>Password: </label>
+            <input type="password" class="form-control" [class.is-invalid]="registerForm.get('password').invalid && registerForm.get('password').touched" formControlName="password" name="password" placeholder="Password">
+                <small class="text-danger" *ngIf="registerForm.get('password').errors?.required">Password is Required</small>
+                <small class="text-danger" *ngIf="registerForm.get('password').errors?.minlength">Minimum 5 letters of password Required</small>
+            </div>
+
+            <div class="mb-3">
+                <label>Confirm Password: </label>
+                <input type="password" class="form-control" [class.is-invalid]="registerForm.get('confirmPassword').invalid && registerForm.get('confirmPassword').touched" formControlName="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+                <small class="text-danger" *ngIf="registerForm.get('confirmPassword').errors?.required">Confirm Password is required</small>
+                <small class="text-danger" *ngIf="registerForm.get('confirmPassword').errors?.minlength">Minimum 5 letters of password Required</small>
+            </div>
+
+            <div class="mb-3">
+                <label>Mobile Number: </label>
+                <input type="text" class="form-control" name="mobileNumber" [class.is-invalid]="registerForm.get('mobileNumber').invalid && registerForm.get('mobileNumber').touched" formControlName="mobileNumber" name="mobileNumber" placeholder="Mobile Number"> 
+                <small class="text-danger" *ngIf="registerForm.get('mobileNumber').errors?.required">Mobile Number is Required</small>
+                <small class="text-danger" *ngIf="registerForm.get('mobileNumber').errors?.minlength">10 digits of number required</small>
+            </div>
+            
+            
+            <br><br>
+            
+
+        </div>
+        <div class="col-4">
+            <div class="mb-4">
+                <label>Qualification: </label><br>
+                <select>
+                    <option>Choose Your Qualification</option>
+                    <option>CSE</option>
+                    <option>ECE</option>
+                    <option>Mech</option>
+                    <option>Civil</option>
+                    <option>AI</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label>Branch: </label><br>
+                <select>
+                    <option>Choose Your Branch</option>
+                    <option>B.Tech</option>
+                    <option>B.E</option>
+                    <option>M.Tech</option>
+                    <option>B.Sc</option>
+                    <option>B.Com</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label>Passed Out Year: </label><br>
+                <select>
+                    <option>Choose your year</option>
+                    <option>2023</option>
+                    <option>2022</option>
+                    <option>2021</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label>Address:&nbsp; </label>
+                &nbsp;<input  type="text" name="address" [class.is-invalid]="registerForm.get('address').invalid && registerForm.get('address').touched" formControlName="address" placeholder="City/Dist/Mandal/State">
+                <small class="text-danger" *ngIf="registerForm.get('address').errors?.required">Address is Required</small>
+            </div>
+            
+            <div class="mb-3">
+                <label>PinCode:&nbsp; </label>
+                &nbsp;<input type="text" name="pincode" [class.is-invalid]="registerForm.get('pincode').invalid && registerForm.get('pincode').touched" formControlName="pincode" placeholder="Eg: 500000">
+                <small class="text-danger" *ngIf="registerForm.get('pincode').errors?.required">PinCode is Required</small>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <span class="t3"><button class="btn btn-secondary" (click)="onDisplay()">Display</button></span>
+            <span class="t1"><button class="btn btn-primary" routerLink="/login" routerLinkActive="active">Register</button></span>
+            
+            <span class="t2"><button class="btn btn-danger"><input type="reset" value="Reset"></button></span>
+        </div>
+    </div>
+</form>
+</div>
